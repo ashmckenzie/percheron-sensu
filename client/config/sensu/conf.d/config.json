@@ -1,0 +1,7 @@
+{
+  "client": {
+    "name": "sensu_client",
+    "address": "localhost",
+    "subscriptions": [ "ALL", "api_hilander", "hilander" ]
+  }
+}

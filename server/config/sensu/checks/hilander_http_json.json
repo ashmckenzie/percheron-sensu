@@ -1,0 +1,11 @@
+{
+  "checks": {
+    "hilander_http_json": {
+      "command": "/etc/sensu/plugins/check-http-json.rb -t 3 -u https://hilander.io/heartbeat.json",
+      "interval": 60,
+      "occurrences": 3,
+      "subscribers": [ "hilander" ],
+      "handlers": [ "debug", "slack_hilander" ]
+    }
+  }
+}
