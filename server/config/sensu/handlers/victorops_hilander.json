@@ -1,6 +1,6 @@
 {
   "handlers": {
-    "victorops": {
+    "victorops_hilander": {
       "type": "pipe",
       "command": "/etc/sensu/plugins/victorops.rb"
     }

@@ -4,7 +4,7 @@ MAINTAINER ash@the-rebellion.net
 RUN mkdir -p /etc/sensu/ssl /etc/sensu/plugins /etc/sensu/checks /etc/sensu/handlers /var/log/sensu
 
 ADD ./config/sensu/conf.d/config.json /etc/sensu/config.json
-ADD ./config/sensu/conf.d/api.json /etc/sensu/conf.d/rabbitmq.json
+ADD ./config/sensu/conf.d/api.json /etc/sensu/conf.d/api.json
 ADD ./config/sensu/conf.d/rabbitmq.json /etc/sensu/conf.d/rabbitmq.json
 ADD ./config/sensu/conf.d/redis.json /etc/sensu/conf.d/redis.json
 
