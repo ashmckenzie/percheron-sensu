@@ -4,9 +4,9 @@ MAINTAINER ash@the-rebellion.net
 ADD ./config/supervisord.d/rabbitmq.ini /etc/supervisord.d/rabbitmq.ini
 
 # Erlang
-RUN apk add --update-cache erlang@testing erlang-eldap@testing erlang-inets@testing \
-erlang-xmerl@testing erlang-sasl@testing erlang-ssl@testing erlang-mnesia@testing \
-erlang-os-mon@testing erlang-asn1@testing erlang-crypto@testing erlang-public-key@testing libsasl
+RUN apk add --update-cache erlang@edge erlang-eldap@edge erlang-inets@edge \
+erlang-xmerl@edge erlang-sasl@edge erlang-ssl@edge erlang-mnesia@edge \
+erlang-os-mon@edge erlang-asn1@edge erlang-crypto@edge erlang-public-key@edge libsasl
 
 # RabbitMQ
 RUN mkdir -p /opt /etc/rabbitmq/ssl /var/log/rabbitmq /var/lib/rabbitmq/mnesia
