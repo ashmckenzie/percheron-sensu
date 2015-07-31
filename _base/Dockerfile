@@ -7,4 +7,4 @@ RUN mkdir -p /etc/sensu/conf.d
 
 RUN gem install specific_install --no-rdoc --no-ri
 RUN gem specific_install https://github.com/ashmckenzie/sensu.git
-RUN gem install sensu-plugin --no-rdoc --no-ri
+RUN gem install sensu-plugin erubis --no-rdoc --no-ri

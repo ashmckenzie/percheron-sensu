@@ -5,7 +5,7 @@
       "interval": 60,
       "occurrences": 3,
       "subscribers": [ "api_hilander" ],
-      "handlers": [ "debug", "slack_hilander" ]
+      "handlers": [ "debug", "slack_hilander", "victorops_hilander" ]
     }
   }
 }

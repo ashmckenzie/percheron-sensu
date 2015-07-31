@@ -1,0 +1,8 @@
+{
+  "handlers": {
+    "victorops": {
+      "type": "pipe",
+      "command": "/etc/sensu/plugins/victorops.rb"
+    }
+  }
+}
