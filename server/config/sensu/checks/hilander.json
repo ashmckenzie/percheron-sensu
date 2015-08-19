@@ -5,12 +5,26 @@
       "interval": 30,
       "occurrences": 2,
       "subscribers": [ "hilander" ],
+      "handle": false,
+      "aggregate": true
+    },
+    "hilander_http_aggregate": {
+      "command": "/etc/sensu/plugins/check-aggregate.rb -c hilander_http_json -C 75 -M 'Hilander appears to be down'",
+      "interval": 30,
+      "subscribers": [ "hilander" ],
       "handlers": [ "debug", "slack_hilander", "victorops_hilander" ]
-    }
+    },
     "api_hilander_http_json": {
       "command": "/etc/sensu/plugins/check-http-json.rb -t 3 -u https://api.hilander.io/",
       "interval": 30,
       "occurrences": 2,
+      "subscribers": [ "api_hilander" ],
+      "handle": false,
+      "aggregate": true
+    },
+    "api_hilander_http_aggregate": {
+      "command": "/etc/sensu/plugins/check-aggregate.rb -c api_hilander_http_json -C 75 -M 'Hilander API appears to be down'",
+      "interval": 30,
       "subscribers": [ "api_hilander" ],
       "handlers": [ "debug", "slack_hilander", "victorops_hilander" ]
     }

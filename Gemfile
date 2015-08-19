@@ -1,3 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'percheron', github: 'ashmckenzie/percheron'
+gem 'pry-byebug'
+gem 'percheron', path: '/Users/ash/src/personal/percheron'
+#gem 'percheron', github: 'ashmckenzie/percheron'

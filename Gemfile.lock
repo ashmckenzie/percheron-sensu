@@ -1,6 +1,5 @@
-GIT
-  remote: git://github.com/ashmckenzie/percheron.git
-  revision: 541c34fca1894ef8633acd1f45ef6329867b62fd
+PATH
+  remote: /Users/ash/src/personal/percheron
   specs:
     percheron (0.8.0)
       clamp (~> 1.0.0)
@@ -17,7 +16,11 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    byebug (5.0.0)
+      columnize (= 0.9.0)
     clamp (1.0.0)
+    coderay (1.1.0)
+    columnize (0.9.0)
     docker-api (1.22.2)
       excon (>= 0.38.0)
       json
@@ -27,9 +30,18 @@ GEM
     json (1.8.3)
     liquid (3.0.6)
     metastore (0.3.0)
+    method_source (0.8.2)
     naught (1.0.0)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-byebug (3.2.0)
+      byebug (~> 5.0)
+      pry (~> 0.10)
     ruby-graphviz (1.2.2)
     semantic (1.4.1)
+    slop (3.6.0)
     terminal-table (1.5.2)
 
 PLATFORMS
@@ -37,6 +49,7 @@ PLATFORMS
 
 DEPENDENCIES
   percheron!
+  pry-byebug
 
 BUNDLED WITH
    1.10.6

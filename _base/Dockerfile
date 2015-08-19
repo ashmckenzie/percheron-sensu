@@ -24,5 +24,5 @@ RUN cd /etc/sensu/plugins && wget https://raw.githubusercontent.com/sensu/sensu-
 RUN chmod 755 /etc/sensu/plugins/*.rb
 
 RUN echo 'gem: --no-document' > /etc/gemrc
-RUN gem install sensu-plugin erubis specific_install
+RUN gem install sensu-plugin erubis rest-client specific_install
 RUN gem specific_install https://github.com/ashmckenzie/sensu.git
