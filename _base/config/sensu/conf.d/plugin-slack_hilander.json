@@ -1,0 +1,6 @@
+{
+  "slack_hilander": {
+    "webhook_url": "<SLACK_HILANDER_WEBHOOK_URL>",
+    "fields": [ ]
+  }
+}

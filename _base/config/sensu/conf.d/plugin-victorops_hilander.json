@@ -1,0 +1,6 @@
+{
+  "victorops_hilander" : {
+    "api_url": "<VICTOROPS_HILANDER_API_URL>",
+    "routing_key": "everyone"
+  }
+}

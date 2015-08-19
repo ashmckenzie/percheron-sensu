@@ -1,8 +1,0 @@
-{
-  "handlers": {
-    "slack_hilander": {
-      "type": "pipe",
-      "command": "/etc/sensu/plugins/slack.rb -j slack_hilander"
-    }
-  }
-}
