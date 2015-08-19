@@ -1,0 +1,8 @@
+#!/bin/sh
+
+sed -i "s%<NODE_NAME>%${HOSTNAME}%" /etc/sensu/config.json
+sed -i "s%<NODE_IP>%$(ip route get 1 | awk '{print $NF;exit}')%" /etc/sensu/config.json
+
+mkdir -p /var/log/sensu
+
+/usr/bin/supervisord -n -c /etc/supervisord.conf

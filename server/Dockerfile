@@ -10,6 +10,9 @@ ADD ./config/sensu/checks/hilander.json /etc/sensu/checks/hilander.json
 ADD ./config/supervisord.d/sensu_server.ini /etc/supervisord.d/sensu_server.ini
 ADD ./config/supervisord.d/sensu_api.ini /etc/supervisord.d/sensu_api.ini
 
+ADD ./config/start /start
+RUN chmod 755 /start
+
 EXPOSE 4567
 
-CMD [ "/usr/bin/supervisord", "-n", "-c", "/etc/supervisord.conf" ]
+CMD [ "/start" ]

@@ -1,7 +1,7 @@
 {
   "api": {
-    "host": "localhost",
     "bind": "0.0.0.0",
+    "host": "sensu_server",
     "port": 4567
   }
 }

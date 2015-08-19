@@ -1,0 +1,9 @@
+#!/bin/sh
+
+mkdir -p /var/log/sensu
+
+if [ "${ENABLE_ALERTS}" ]; then
+  sed -i 's%"alert": false%"alert": true%' /etc/sensu/checks/*.json
+fi
+
+/usr/bin/supervisord -n -c /etc/supervisord.conf
