@@ -1,4 +1,5 @@
 ---
+secrets_file: ./.secrets.yml
 stacks:
   - name: sensu
     units:
