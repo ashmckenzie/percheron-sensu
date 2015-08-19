@@ -10,6 +10,9 @@ ADD ./config/sensu/checks/hilander.json /etc/sensu/checks/hilander.json
 ADD ./config/supervisord.d/sensu_server.ini /etc/supervisord.d/sensu_server.ini
 ADD ./config/supervisord.d/sensu_api.ini /etc/supervisord.d/sensu_api.ini
 
+RUN sed -i 's%<RABBITMQ_USER>%{{ secrets.rabbitmq.user }}%' /etc/sensu/checks/*.json
+RUN sed -i 's%<RABBITMQ_PASSWORD>%{{ secrets.rabbitmq.password }}%' /etc/sensu/checks/*.json
+
 ADD ./config/start /start
 RUN chmod 755 /start
 
