@@ -9,7 +9,6 @@ ADD ./config/repositories /etc/apk/repositories
 ADD ./config/supevisord.conf /etc/supervisord.conf
 
 RUN apk add --update-cache supervisor git bash openssl-dev ca-certificates
-RUN apk upgrade
 
 RUN mkdir -p /etc/supervisord.d /data/ssl
 

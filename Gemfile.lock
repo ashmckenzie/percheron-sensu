@@ -1,8 +1,9 @@
 GIT
   remote: git://github.com/ashmckenzie/percheron.git
-  revision: 541c34fca1894ef8633acd1f45ef6329867b62fd
+  revision: 01ba9f5fc784e207599def81bb810a567fe8e7d9
+  branch: 0.9.0-dev
   specs:
-    percheron (0.8.0)
+    percheron (0.9.0.pre.dev)
       clamp (~> 1.0.0)
       docker-api (~> 1.22.0)
       hashie (~> 3.4.0)
@@ -22,7 +23,7 @@ GEM
     clamp (1.0.0)
     coderay (1.1.0)
     columnize (0.9.0)
-    docker-api (1.22.2)
+    docker-api (1.22.3)
       excon (>= 0.38.0)
       json
     excon (0.45.4)

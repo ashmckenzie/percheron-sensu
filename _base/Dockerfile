@@ -1,7 +1,7 @@
 FROM sensu_bare:1.0.0
 MAINTAINER ash@the-rebellion.net
 
-RUN apk add --update-cache build-base libffi-dev ruby ruby-dev perl
+RUN apk add --update-cache build-base libffi-dev ruby@testing ruby-dev@testing perl
 
 RUN echo 'gem: --no-document' > /etc/gemrc
 RUN gem install sensu-plugin erubis rest-client specific_install
