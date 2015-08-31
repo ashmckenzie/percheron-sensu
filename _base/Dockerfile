@@ -12,6 +12,8 @@ RUN mkdir -p /etc/sensu/conf.d /etc/sensu/ssl /etc/sensu/plugins /etc/sensu/chec
 RUN cp /data/ssl/*.pem /etc/sensu/ssl/
 
 ADD ./config/sensu/conf.d/rabbitmq.json /etc/sensu/conf.d/rabbitmq.json
+RUN sed -i 's%<RABBITMQ_HOST>%{{ userdata.rabbitmq.host }}%' /etc/sensu/conf.d/rabbitmq.json
+RUN sed -i 's%<RABBITMQ_PORT>%{{ userdata.rabbitmq.port }}%' /etc/sensu/conf.d/rabbitmq.json
 RUN sed -i 's%<RABBITMQ_USER>%{{ secrets.rabbitmq.user }}%' /etc/sensu/conf.d/rabbitmq.json
 RUN sed -i 's%<RABBITMQ_PASSWORD>%{{ secrets.rabbitmq.password }}%' /etc/sensu/conf.d/rabbitmq.json
 

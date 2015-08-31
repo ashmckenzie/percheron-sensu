@@ -52,6 +52,3 @@ PLATFORMS
 DEPENDENCIES
   percheron!
   pry-byebug
-
-BUNDLED WITH
-   1.10.6
