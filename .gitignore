@@ -1,2 +1,4 @@
+.DS_Store
 .envrc
 .secrets.yml
+server/config/sensu/checks/the_rebellion.json
