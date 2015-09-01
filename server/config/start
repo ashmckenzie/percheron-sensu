@@ -2,7 +2,7 @@
 
 mkdir -p /var/log/sensu
 
-if [ "${ENABLE_ALERTS}" ]; then
+if [ "${ENABLE_ALERTS}x" == "truex" ]; then
   sed -i 's%"alert": false%"alert": true%' /etc/sensu/checks/*.json
 fi
 
