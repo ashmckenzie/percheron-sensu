@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/ashmckenzie/percheron.git
-  revision: 01ba9f5fc784e207599def81bb810a567fe8e7d9
+  revision: 07eea52af55049f016eda8acf62ad0bba5d0d64f
   branch: 0.9.0-dev
   specs:
     percheron (0.9.0.pre.dev)
