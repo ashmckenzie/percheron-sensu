@@ -81,7 +81,7 @@ stacks:
         #   - "3000:3000"
         volumes:
           - /data/sensu-dashboard/logs:/var/log
-          - /docker/percheron-sensu/dashboard/config:/config
+          - /docker/sensu/dashboard/config:/config
         needed_unit_names:
           - server
         env:
