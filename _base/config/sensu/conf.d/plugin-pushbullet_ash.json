@@ -1,0 +1,6 @@
+{
+  "pushbullet_ash" : {
+    "api_key": "<PUSHBULLET_ASH_API_KEY>",
+    "device_id": "<PUSHBULLET_ASH_DEVICE_ID>"
+  }
+}

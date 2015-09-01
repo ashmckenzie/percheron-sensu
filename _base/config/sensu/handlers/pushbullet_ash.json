@@ -1,0 +1,9 @@
+{
+  "handlers": {
+    "pushbullet_ash": {
+      "type": "pipe",
+      "severities": [ "ok", "critical" ],
+      "command": "/etc/sensu/plugins/pushbullet.rb -j pushbullet_ash"
+    }
+  }
+}
