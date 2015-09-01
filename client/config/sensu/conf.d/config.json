@@ -2,6 +2,11 @@
   "client": {
     "name": "<NODE_NAME>",
     "address": "<NODE_IP>",
-    "subscriptions": [ "common", "api_hilander", "hilander" ]
+    "subscriptions": [
+      "common",
+      "api_hilander",
+      "hilander",
+      "the_rebellion"
+    ]
   }
 }

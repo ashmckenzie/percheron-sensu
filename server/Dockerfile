@@ -6,6 +6,7 @@ ADD ./config/sensu/conf.d/api.json /etc/sensu/conf.d/api.json
 ADD ./config/sensu/conf.d/redis.json /etc/sensu/conf.d/redis.json
 
 ADD ./config/sensu/checks/hilander.json /etc/sensu/checks/hilander.json
+ADD ./config/sensu/checks/the_rebellion.json /etc/sensu/checks/the_rebellion.json
 
 ADD ./config/supervisord.d/sensu_server.ini /etc/supervisord.d/sensu_server.ini
 ADD ./config/supervisord.d/sensu_api.ini /etc/supervisord.d/sensu_api.ini
