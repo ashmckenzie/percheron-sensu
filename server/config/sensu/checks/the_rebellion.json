@@ -1,0 +1,34 @@
+{
+  "checks": {
+    "the_rebellion_keybase": {
+      "command": "/etc/sensu/plugins/check-http.rb -t 3 -u http://the-rebellion.net/keybase.txt",
+      "interval": 1800,
+      "subscribers": [ "the_rebellion" ],
+      "handle": false,
+      "aggregate": true
+    },
+    "the_rebellion_keybase_aggregate": {
+      "command": "/etc/sensu/plugins/check-aggregate.rb -a http://<SENSU_HOST>:<SENSU_PORT> -u <RABBITMQ_USER> -p <RABBITMQ_PASSWORD> -c the_rebellion_keybase -C 75 -M 'keybase file is missing!'",
+      "alert": false,
+      "interval": 900,
+      "occurrences": 2,
+      "subscribers": [ "the_rebellion" ],
+      "handlers": [ "victorops_the_rebellion" ]
+    },
+    "the_rebellion_image_scaler": {
+      "command": "/etc/sensu/plugins/check-http.rb -t 3 -u http://image-scaler.the-rebellion.net/images/400x400/http%3A%2F%2Fi.imgur.com%2FLgJZlMi.jpg?api_key=<IMAGER_SCALER_API_KEY>",
+      "interval": 1800,
+      "subscribers": [ "the_rebellion" ],
+      "handle": false,
+      "aggregate": true
+    },
+    "the_rebellion_image_scaler_aggregate": {
+      "command": "/etc/sensu/plugins/check-aggregate.rb -a http://<SENSU_HOST>:<SENSU_PORT> -u <RABBITMQ_USER> -p <RABBITMQ_PASSWORD> -c the_rebellion_image_scaler -C 75 -M 'image-scaler app is down!'",
+      "alert": false,
+      "interval": 900,
+      "occurrences": 2,
+      "subscribers": [ "the_rebellion" ],
+      "handlers": [ "victorops_the_rebellion" ]
+    }
+  }
+}

@@ -12,6 +12,7 @@ ADD ./config/supervisord.d/sensu_api.ini /etc/supervisord.d/sensu_api.ini
 
 WORKDIR /etc/sensu/checks
 
+RUN sed -i 's%<IMAGER_SCALER_API_KEY>%{{ secrets.image_scaler.api_key }}%' *.json
 RUN sed -i 's%<SENSU_HOST>%{{ userdata.sensu.host }}%' *.json
 RUN sed -i 's%<SENSU_PORT>%{{ userdata.sensu.port }}%' *.json
 RUN sed -i 's%<RABBITMQ_USER>%{{ secrets.rabbitmq.user }}%' *.json
