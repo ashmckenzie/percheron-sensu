@@ -1,0 +1,29 @@
+{
+  "aggregate_checks": {
+    "the_rebellion_keybase": {
+      "command": "/etc/sensu/plugins/check-http.rb -t 3 -u http://the-rebellion.net/keybase.txt",
+      "interval": 900,
+      "subscribers": [ "the_rebellion" ],
+      "aggregate": {
+        "alert": false,
+        "command": "/etc/sensu/plugins/check-aggregate.rb -a http://<SENSU_HOST>:<SENSU_PORT> -u <RABBITMQ_USER> -p <RABBITMQ_PASSWORD> -c the_rebellion_keybase -C 75 -M 'keybase file is missing!'",
+        "interval": 930,
+        "occurrences": 2,
+        "handlers": [ "pushbullet_ash" ]
+      }
+    },
+
+    "the_rebellion_image_scaler": {
+      "command": "/etc/sensu/plugins/check-http.rb -t 3 -u <IMAGER_SCALER_URL>/?api_key=<IMAGER_SCALER_API_KEY>",
+      "interval": 900,
+      "subscribers": [ "the_rebellion" ],
+      "aggregate": {
+        "alert": false,
+        "command": "/etc/sensu/plugins/check-aggregate.rb -a http://<SENSU_HOST>:<SENSU_PORT> -u <RABBITMQ_USER> -p <RABBITMQ_PASSWORD> -c the_rebellion_image_scaler -C 75 -M 'image-scaler app is down!'",
+        "interval": 930,
+        "occurrences": 2,
+        "handlers": [ "pushbullet_ash" ]
+      }
+    }
+  }
+}

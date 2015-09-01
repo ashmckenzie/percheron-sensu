@@ -49,6 +49,8 @@ stacks:
         dockerfile: ./server/Dockerfile
         # ports:
         #   - "4567:4567"
+        pre_build_scripts:
+          - ./scripts/generate_checks.rb ./config/sensu/aggregate_checks/the_rebellion.json ./config/sensu/checks/the_rebellion.json
         needed_unit_names:
           - bare
           - base
