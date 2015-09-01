@@ -1,6 +1,11 @@
 ---
 secrets_file: ./.secrets.yml
 
+userdata:
+  sensu:
+    host: sensu_server
+    port: 4567
+
 stacks:
   - name: sensu
     units:
