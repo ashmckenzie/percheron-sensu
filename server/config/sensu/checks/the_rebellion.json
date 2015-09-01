@@ -13,7 +13,7 @@
       "interval": 900,
       "occurrences": 2,
       "subscribers": [ "the_rebellion" ],
-      "handlers": [ "victorops_the_rebellion" ]
+      "handlers": [ "pushbullet_ash" ]
     },
     "the_rebellion_image_scaler": {
       "command": "/etc/sensu/plugins/check-http.rb -t 3 -u http://image-scaler.the-rebellion.net/images/400x400/http%3A%2F%2Fi.imgur.com%2FLgJZlMi.jpg?api_key=<IMAGER_SCALER_API_KEY>",
@@ -28,7 +28,7 @@
       "interval": 900,
       "occurrences": 2,
       "subscribers": [ "the_rebellion" ],
-      "handlers": [ "victorops_the_rebellion" ]
+      "handlers": [ "pushbullet_ash" ]
     }
   }
 }
