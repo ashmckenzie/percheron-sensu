@@ -2,6 +2,7 @@
   "handlers": {
     "victorops_hilander": {
       "type": "pipe",
+      "severities": [ "ok", "critical" ],
       "command": "/etc/sensu/plugins/victorops.rb"
     }
   }

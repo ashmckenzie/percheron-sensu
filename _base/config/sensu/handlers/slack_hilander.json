@@ -2,6 +2,7 @@
   "handlers": {
     "slack_hilander": {
       "type": "pipe",
+      "severities": [ "ok", "critical" ],
       "command": "/etc/sensu/plugins/slack.rb -j slack_hilander"
     }
   }
