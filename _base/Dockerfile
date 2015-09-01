@@ -26,6 +26,7 @@ RUN sed -i 's%<VICTOROPS_HILANDER_API_URL>%{{ secrets.victorops_hilander_api_url
 
 WORKDIR /etc/sensu/plugins
 
+RUN wget https://raw.githubusercontent.com/sensu-plugins/sensu-plugins-http/master/bin/check-http.rb
 RUN wget https://raw.githubusercontent.com/sensu-plugins/sensu-plugins-http/master/bin/check-http-json.rb
 RUN wget https://raw.githubusercontent.com/sensu/sensu-community-plugins/master/plugins/sensu/check-aggregate.rb
 RUN wget https://raw.githubusercontent.com/sensu-plugins/sensu-plugins-slack/master/bin/handler-slack.rb -O slack.rb
