@@ -24,8 +24,11 @@ RUN sed -i 's%<SLACK_HILANDER_WEBHOOK_URL>%{{ secrets.slack_hilander_webhook_url
 ADD ./config/sensu/conf.d/plugin-victorops_hilander.json /etc/sensu/conf.d/plugin-victorops_hilander.json
 RUN sed -i 's%<VICTOROPS_HILANDER_API_URL>%{{ secrets.victorops_hilander_api_url }}%' /etc/sensu/conf.d/plugin-victorops_hilander.json
 
-RUN cd /etc/sensu/plugins && wget https://raw.githubusercontent.com/sensu-plugins/sensu-plugins-slack/master/bin/handler-slack.rb -O slack.rb
-RUN cd /etc/sensu/plugins && wget https://raw.githubusercontent.com/sensu-plugins/sensu-plugins-http/master/bin/check-http-json.rb
-RUN cd /etc/sensu/plugins && wget https://raw.githubusercontent.com/sensu/sensu-community-plugins/master/plugins/sensu/check-aggregate.rb
-RUN cd /etc/sensu/plugins && wget https://raw.githubusercontent.com/sensu-plugins/sensu-plugins-victorops/master/bin/handler-victorops.rb -O victorops.rb
+WORKDIR /etc/sensu/plugins
+
+RUN wget https://raw.githubusercontent.com/sensu-plugins/sensu-plugins-http/master/bin/check-http-json.rb
+RUN wget https://raw.githubusercontent.com/sensu/sensu-community-plugins/master/plugins/sensu/check-aggregate.rb
+RUN wget https://raw.githubusercontent.com/sensu-plugins/sensu-plugins-slack/master/bin/handler-slack.rb -O slack.rb
+RUN wget https://raw.githubusercontent.com/sensu-plugins/sensu-plugins-victorops/master/bin/handler-victorops.rb -O victorops.rb
+
 RUN chmod 755 /etc/sensu/plugins/*.rb
