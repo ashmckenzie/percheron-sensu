@@ -2,6 +2,10 @@
 secrets_file: ./.secrets.yml
 
 userdata:
+  rabbitmq:
+    host: sensu_rabbitmq
+    port: 5671
+    vhost: /sensu
   sensu:
     host: sensu_server
     port: 4567

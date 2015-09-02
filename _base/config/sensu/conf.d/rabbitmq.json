@@ -1,8 +1,8 @@
 {
   "rabbitmq": {
-    "host": "sensu_rabbitmq",
-    "port": 5671,
-    "vhost": "/sensu",
+    "host": "<RABBITMQ_HOST>",
+    "port": "<RABBITMQ_PORT>",
+    "vhost": "<RABBITMQ_VHOST>",
     "user": "<RABBITMQ_USER>",
     "password": "<RABBITMQ_PASSWORD>",
     "ssl": {
