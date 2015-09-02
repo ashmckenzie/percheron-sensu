@@ -59,7 +59,7 @@ stacks:
         volumes:
           - /data/sensu-server/logs:/var/log
         env:
-          - ENABLE_ALERTS=false
+          - SENSU_ENABLE_ALERTS=false
           - SERVICE_NAME=server
           - SERVICE_TAGS=sensu
 

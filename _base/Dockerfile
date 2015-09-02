@@ -7,7 +7,7 @@ RUN echo 'gem: --no-document' > /etc/gemrc
 RUN gem install sensu-plugin erubis rest-client specific_install
 RUN gem specific_install https://github.com/ashmckenzie/sensu.git
 
-RUN mkdir -p /etc/sensu/conf.d /etc/sensu/ssl /etc/sensu/plugins /etc/sensu/checks /etc/sensu/handlers /var/log/sensu
+RUN mkdir -p /etc/sensu/conf.d /etc/sensu/ssl /etc/sensu/plugins /etc/sensu/handlers /var/log/sensu
 
 RUN cp /data/ssl/*.pem /etc/sensu/ssl/
 
@@ -22,8 +22,15 @@ RUN sed -i 's%<SLACK_HILANDER_WEBHOOK_URL>%{{ secrets.slack.hilander_webhook_url
 RUN sed -i 's%<VICTOROPS_HILANDER_API_URL>%{{ secrets.victorops.hilander_api_url }}%' plugin-victorops_hilander.json
 RUN sed -i 's%<PUSHBULLET_ASH_API_KEY>%{{ secrets.pushbullet.ash.api_key }}%' plugin-pushbullet_ash.json
 RUN sed -i 's%<PUSHBULLET_ASH_DEVICE_ID>%{{ secrets.pushbullet.ash.device_id }}%' plugin-pushbullet_ash.json
+RUN sed -i 's%<PUSHBULLET_CHANNEL_TAG>%{{ secrets.pushbullet.channel_tag }}%' plugin-pushbullet_ash.json
 
 WORKDIR /etc/sensu/plugins
 ADD ./config/sensu/plugins/* ./
+
+ENV SENSU_URL http://{{ userdata.sensu.host }}:{{ userdata.sensu.port }}
+ENV SENSU_HOST {{ userdata.sensu.host }}
+ENV SENSU_PORT {{ userdata.sensu.port }}
+ENV RABBITMQ_USER {{ secrets.rabbitmq.user }}
+ENV RABBITMQ_PASSWORD {{ secrets.rabbitmq.password }}
 
 RUN chmod 755 /etc/sensu/plugins/*.rb

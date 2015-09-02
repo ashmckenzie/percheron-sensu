@@ -1,7 +1,7 @@
 FROM sensu_bare:1.0.0
 MAINTAINER ash@the-rebellion.net
 
-ADD ./config/supervisord.d/rabbitmq.ini /etc/supervisord.d/rabbitmq.ini
+ADD ./config/supervisor.d/rabbitmq.ini /etc/supervisor.d/rabbitmq.ini
 
 RUN apk add --update-cache erlang@edge erlang-eldap@edge erlang-inets@edge \
 erlang-xmerl@edge erlang-sasl@edge erlang-ssl@edge erlang-mnesia@edge \

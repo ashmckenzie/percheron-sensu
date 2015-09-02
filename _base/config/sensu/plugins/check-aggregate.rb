@@ -22,17 +22,19 @@ class CheckAggregate < Sensu::Plugin::Check::CLI
          short: '-a URL',
          long: '--api URL',
          description: 'Sensu API URL',
-         default: 'http://localhost:4567'
+         default: ENV.fetch('SENSU_URL', 'http://localhost:4567')
 
   option :user,
          short: '-u USER',
          long: '--user USER',
-         description: 'Sensu API USER'
+         description: 'Sensu API USER',
+         default: ENV.fetch('SENSU_USER', '')
 
   option :password,
          short: '-p PASSWORD',
          long: '--password PASSWORD',
-         description: 'Sensu API PASSWORD'
+         description: 'Sensu API PASSWORD',
+         default: ENV.fetch('SENSU_PASSWORD', '')
 
   option :timeout,
          short: '-t SECONDS',

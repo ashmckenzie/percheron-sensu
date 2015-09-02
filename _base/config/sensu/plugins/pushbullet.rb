@@ -21,6 +21,10 @@ class Pushbullet < Sensu::Handler
     get_setting('api_key')
   end
 
+  def channel_tag
+    get_setting('channel_tag')
+  end
+
   def device_id
     get_setting('device_id')
   end
@@ -41,7 +45,15 @@ class Pushbullet < Sensu::Handler
 
     req = Net::HTTP::Post.new("#{uri.path}?#{uri.query}")
     req.basic_auth(api_key, '')
-    req.set_form_data(payload(incident_key, description))
+
+    data = payload(incident_key, description)
+    if device_id
+      data['device_iden'] = device_id
+    elsif
+      data['channel_tag'] = channel_tag
+    end
+
+    req.set_form_data(data)
 
     response = http.request(req)
     verify_response(response)
@@ -59,7 +71,6 @@ class Pushbullet < Sensu::Handler
   def payload(title, body)
     title = 'Sensu Alert: %s' % [ title ]
     {
-      'device_iden' => device_id,
       'type'        => 'note',
       'title'       => title,
       'body'        => body

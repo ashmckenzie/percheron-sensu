@@ -16,6 +16,8 @@ source['aggregate_checks'].each do |check_name, check_detail|
   aggregate_check_name = '%s_aggregate' % [ check_name ]
   aggregate_check_detail = check_detail.delete('aggregate')
   aggregate_check_detail['subscribers'] = check_detail.fetch('subscribers', []) unless aggregate_check_detail['subscribers']
+  aggregate_check_detail['interval'] = (check_detail.fetch('interval') + 30)    unless aggregate_check_detail['interval']
+  aggregate_check_detail['occurrences'] = 2                                     unless aggregate_check_detail['occurrences']
 
   output['checks'][check_name] = check_detail
   output['checks'][aggregate_check_name] = aggregate_check_detail
