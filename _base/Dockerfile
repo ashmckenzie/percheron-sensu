@@ -16,9 +16,9 @@ ADD ./config/sensu/handlers/* ./
 
 WORKDIR /etc/sensu/conf.d
 ADD ./config/sensu/conf.d/* ./
-RUN sed -i 's%<RABBITMQ_HOST>%{{ secrets.rabbitmq.host }}%' rabbitmq.json
-RUN sed -i 's%<RABBITMQ_PORT>%{{ secrets.rabbitmq.port }}%' rabbitmq.json
-RUN sed -i 's%<RABBITMQ_VHOST>%{{ secrets.rabbitmq.vhost }}%' rabbitmq.json
+RUN sed -i 's%<RABBITMQ_HOST>%{{ userdata.rabbitmq.host }}%' rabbitmq.json
+RUN sed -i 's%<RABBITMQ_PORT>%{{ userdata.rabbitmq.port }}%' rabbitmq.json
+RUN sed -i 's%<RABBITMQ_VHOST>%{{ userdata.rabbitmq.vhost }}%' rabbitmq.json
 RUN sed -i 's%<RABBITMQ_USER>%{{ secrets.rabbitmq.user }}%' rabbitmq.json
 RUN sed -i 's%<RABBITMQ_PASSWORD>%{{ secrets.rabbitmq.password }}%' rabbitmq.json
 RUN sed -i 's%<SLACK_HILANDER_WEBHOOK_URL>%{{ secrets.slack.hilander_webhook_url }}%' plugin-slack_hilander.json
