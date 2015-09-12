@@ -10,14 +10,13 @@
         "handlers": [ "pushbullet_ash" ]
       }
     },
-
-    "the_rebellion_image_scaler": {
+    "the_rebellion_image_proxy": {
       "command": "/etc/sensu/plugins/check-http.rb -t 3 -u <IMAGER_SCALER_URL>/?api_key=<IMAGER_SCALER_API_KEY>",
       "interval": 60,
       "subscribers": [ "the_rebellion" ],
       "aggregate": {
         "alert": false,
-        "command": "/etc/sensu/plugins/check-aggregate.rb -c the_rebellion_image_scaler -C 75 -M 'image-scaler app is down!'",
+        "command": "/etc/sensu/plugins/check-aggregate.rb -c the_rebellion_image_proxy -C 75 -M 'image-scaler app is down!'",
         "handlers": [ "pushbullet_ash" ]
       }
     }

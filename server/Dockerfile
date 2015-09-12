@@ -12,8 +12,7 @@ ADD ./config/supervisor.d/* ./
 WORKDIR /etc/sensu/checks
 ADD ./config/sensu/checks/* ./
 
-RUN sed -i 's%<IMAGER_SCALER_URL>%{{ secrets.image_scaler.url }}%' *.json
-RUN sed -i 's%<IMAGER_SCALER_API_KEY>%{{ secrets.image_scaler.api_key }}%' *.json
+RUN sed -i 's%<IMAGER_PROXY_URL>%{{ secrets.image_proxy.url }}%' *.json
 
 WORKDIR /etc/sensu
 
