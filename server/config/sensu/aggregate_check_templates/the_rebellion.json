@@ -11,7 +11,7 @@
       }
     },
     "the_rebellion_image_proxy": {
-      "command": "/etc/sensu/plugins/check-http.rb -t 3 -u <IMAGER_SCALER_URL>/?api_key=<IMAGER_SCALER_API_KEY>",
+      "command": "/etc/sensu/plugins/check-http.rb -t 3 -u <IMAGE_PROXY_URL>",
       "interval": 60,
       "subscribers": [ "the_rebellion" ],
       "aggregate": {
