@@ -16,7 +16,7 @@
       "subscribers": [ "the_rebellion" ],
       "aggregate": {
         "alert": false,
-        "command": "/etc/sensu/plugins/check-aggregate.rb -c the_rebellion_image_proxy -C 75 -M 'image-scaler app is down!'",
+        "command": "/etc/sensu/plugins/check-aggregate.rb -c the_rebellion_image_proxy -C 75 -M 'image-proxy app is down!'",
         "handlers": [ "pushbullet_ash" ]
       }
     }

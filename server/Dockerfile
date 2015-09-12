@@ -15,7 +15,6 @@ ADD ./config/sensu/checks/* ./
 RUN sed -i 's%<IMAGE_PROXY_URL>%{{ secrets.image_proxy.url }}%' *.json
 
 WORKDIR /etc/sensu
-
 ADD ./config/start /start
 RUN chmod 755 /start
 
