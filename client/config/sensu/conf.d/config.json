@@ -5,7 +5,9 @@
     "subscriptions": [
       "common",
       "api_hilander",
+      "api_hilander_aggr",
       "hilander",
+      "hilander_aggr",
       "the_rebellion"
     ]
   }

@@ -55,6 +55,7 @@ stacks:
         #   - "4567:4567"
         pre_build_scripts:
           - ./scripts/generate_checks.rb ./config/sensu/aggregate_check_templates/the_rebellion.json ./config/sensu/checks/the_rebellion.json
+          - ./scripts/generate_checks.rb ./config/sensu/aggregate_check_templates/hilander.json ./config/sensu/checks/hilander.json
         needed_unit_names:
           - bare
           - base
