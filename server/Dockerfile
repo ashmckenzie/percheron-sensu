@@ -12,7 +12,7 @@ ADD ./config/supervisor.d/* ./
 WORKDIR /etc/sensu/checks
 ADD ./config/sensu/checks/* ./
 
-RUN sed -i 's%<IMAGER_PROXY_URL>%{{ secrets.image_proxy.url }}%' *.json
+RUN sed -i 's%<IMAGE_PROXY_URL>%{{ secrets.image_proxy.url }}%' *.json
 
 WORKDIR /etc/sensu
 
