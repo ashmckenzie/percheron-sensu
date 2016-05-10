@@ -3,9 +3,9 @@ MAINTAINER ash@the-rebellion.net
 
 ADD ./config/supervisor.d/rabbitmq.ini /etc/supervisor.d/rabbitmq.ini
 
-RUN apk add --update-cache erlang@edge erlang-eldap@edge erlang-inets@edge \
-erlang-xmerl@edge erlang-sasl@edge erlang-ssl@edge erlang-mnesia@edge \
-erlang-os-mon@edge erlang-asn1@edge erlang-crypto@edge erlang-public-key@edge libsasl
+RUN apk add --update-cache libsasl erlang@community erlang-eldap@community erlang-inets@community \
+erlang-xmerl@community erlang-sasl@community erlang-ssl@community erlang-mnesia@community \
+erlang-os-mon@community erlang-asn1@community erlang-crypto@community erlang-public-key@community
 
 RUN mkdir -p /opt /etc/rabbitmq/ssl /var/log/rabbitmq /var/lib/rabbitmq/mnesia
 ADD ./config/rabbitmq/rabbitmq.config /etc/rabbitmq/rabbitmq.config

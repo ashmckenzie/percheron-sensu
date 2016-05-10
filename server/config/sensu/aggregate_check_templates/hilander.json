@@ -8,7 +8,7 @@
         "alert": false,
         "command": "/etc/sensu/plugins/check-aggregate.rb -c hilander_http_json -C 75 -M 'Hilander appears to be down'",
         "subscribers": [ "hilander_aggr" ],
-        "handlers": [ "slack_hilander", "victorops_hilander" ]
+        "handlers": [ "default", "pushbullet_ash", "victorops_hilander" ]
       }
     },
     "api_hilander_http_json": {
@@ -19,7 +19,7 @@
         "alert": false,
         "command": "/etc/sensu/plugins/check-aggregate.rb -c api_hilander_http_json -C 75 -M 'Hilander API appears to be down'",
         "subscribers": [ "api_hilander_aggr" ],
-        "handlers": [ "slack_hilander", "victorops_hilander" ]
+        "handlers": [ "default" ]
       }
     }
   }

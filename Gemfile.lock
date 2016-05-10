@@ -1,11 +1,11 @@
 GIT
   remote: git://github.com/ashmckenzie/percheron.git
-  revision: 07eea52af55049f016eda8acf62ad0bba5d0d64f
+  revision: da25b05e861153f2be9899bdcc84d1068dd48493
   branch: 0.9.0-dev
   specs:
     percheron (0.9.0.pre.dev)
       clamp (~> 1.0.0)
-      docker-api (~> 1.22.0)
+      docker-api (~> 1.0)
       hashie (~> 3.4.0)
       highline (~> 1.7.1)
       liquid (~> 3.0.0)
@@ -18,28 +18,26 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    byebug (5.0.0)
-      columnize (= 0.9.0)
+    byebug (8.2.2)
     clamp (1.0.0)
     coderay (1.1.0)
-    columnize (0.9.0)
-    docker-api (1.22.3)
+    docker-api (1.26.0)
       excon (>= 0.38.0)
       json
     excon (0.45.4)
-    hashie (3.4.2)
-    highline (1.7.3)
+    hashie (3.4.3)
+    highline (1.7.8)
     json (1.8.3)
     liquid (3.0.6)
     metastore (0.3.0)
     method_source (0.8.2)
     naught (1.0.0)
-    pry (0.10.1)
+    pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    pry-byebug (3.2.0)
-      byebug (~> 5.0)
+    pry-byebug (3.3.0)
+      byebug (~> 8.0)
       pry (~> 0.10)
     ruby-graphviz (1.2.2)
     semantic (1.4.1)

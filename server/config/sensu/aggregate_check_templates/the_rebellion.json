@@ -7,7 +7,7 @@
       "aggregate": {
         "alert": false,
         "command": "/etc/sensu/plugins/check-aggregate.rb -c the_rebellion_keybase -C 75 -M 'keybase file is missing!'",
-        "handlers": [ "pushbullet_ash" ]
+        "handlers": [ "default", "pushbullet_ash" ]
       }
     },
     "the_rebellion_image_proxy": {
@@ -17,7 +17,7 @@
       "aggregate": {
         "alert": false,
         "command": "/etc/sensu/plugins/check-aggregate.rb -c the_rebellion_image_proxy -C 75 -M 'image-proxy app is down!'",
-        "handlers": [ "pushbullet_ash" ]
+        "handlers": [ "default", "pushbullet_ash" ]
       }
     }
   }

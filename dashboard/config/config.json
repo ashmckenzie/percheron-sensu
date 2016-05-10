@@ -3,19 +3,12 @@
     {
       "name": "Sensu",
       "host": "sensu_server",
-      "ssl": false,
-      "port": 4567,
-      "user": "",
-      "pass": "",
-      "path": "",
-      "timeout": 5000
+      "port": 4567
     }
   ],
   "uchiwa": {
-    "user": "",
-    "pass": "",
+    "host": "0.0.0.0",
     "port": 3000,
-    "stats": 10,
-    "refresh": 10000
+    "refresh": 5
   }
 }

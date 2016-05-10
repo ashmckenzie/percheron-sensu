@@ -1,4 +1,4 @@
-FROM gliderlabs/alpine:latest
+FROM gliderlabs/alpine:edge
 MAINTAINER ash@the-rebellion.net
 
 ENV HOME /root
