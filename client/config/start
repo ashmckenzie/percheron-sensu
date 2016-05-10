@@ -1,7 +1,7 @@
 #!/bin/sh
 
 sed -i "s%<NODE_NAME>%${HOSTNAME}%" /etc/sensu/config.json
-sed -i "s%<NODE_IP>%$(curl ifconfig.co/x-real-ip)%" /etc/sensu/config.json
+sed -i "s%<NODE_IP>%$(curl ifconfig.co)%" /etc/sensu/config.json
 
 mkdir -p /var/log/sensu
 

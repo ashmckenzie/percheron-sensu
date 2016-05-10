@@ -3,7 +3,7 @@ MAINTAINER ash@the-rebellion.net
 
 ENV UPDATED=1462887055
 
-RUN apk add --update-cache build-base libffi-dev ruby@testing ruby-dev@testing perl
+RUN apk add --update-cache build-base libffi-dev ruby@testing ruby-dev@testing perl curl
 
 RUN echo 'gem: --no-document' > /etc/gemrc
 RUN gem install sensu sensu-plugin erubis rest-client

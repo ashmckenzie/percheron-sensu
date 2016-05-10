@@ -12,9 +12,9 @@ ADD ./config/rabbitmq/rabbitmq.config /etc/rabbitmq/rabbitmq.config
 RUN sed -i 's%<RABBITMQ_USER>%{{ secrets.rabbitmq.user }}%' /etc/rabbitmq/rabbitmq.config
 RUN sed -i 's%<RABBITMQ_PASSWORD>%{{ secrets.rabbitmq.password }}%' /etc/rabbitmq/rabbitmq.config
 ADD ./config/rabbitmq/enabled_plugins /etc/rabbitmq/enabled_plugins
-RUN cd /tmp && wget https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.3/rabbitmq-server-generic-unix-3.5.3.tar.gz
-RUN cd /opt && tar xzvf /tmp/rabbitmq-server-generic-unix-3.5.3.tar.gz && ln -sf rabbitmq_server-3.5.3 rabbitmq_server && \
-rm -f /tmp/rabbitmq-server-generic-unix-3.5.3.tar.gz
+RUN cd /tmp && wget https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.7/rabbitmq-server-generic-unix-3.5.7.tar.gz
+RUN cd /opt && tar xzvf /tmp/rabbitmq-server-generic-unix-3.5.7.tar.gz && ln -sf rabbitmq_server-3.5.7 rabbitmq_server && \
+rm -f /tmp/rabbitmq-server-generic-unix-3.5.7.tar.gz
 
 RUN cp /data/ssl/*.pem /etc/rabbitmq/ssl/
 RUN /opt/rabbitmq_server/sbin/rabbitmq-plugins enable rabbitmq_management
