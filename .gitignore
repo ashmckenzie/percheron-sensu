@@ -1,5 +1,6 @@
 .DS_Store
 .envrc
 .secrets.yml
+Dockerfile.generated.*
 server/config/sensu/checks/the_rebellion.json
 server/config/sensu/checks/hilander.json

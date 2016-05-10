@@ -8,7 +8,7 @@ ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ADD ./config/repositories /etc/apk/
 ADD ./config/supevisord.conf /etc/
 
-RUN apk add --update-cache supervisor git bash openssl-dev ca-certificates
+RUN apk add --update-cache supervisor git bash openssl openssl-dev ca-certificates
 
 RUN mkdir -p /etc/supervisor.d /data/ssl
 
