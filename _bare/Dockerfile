@@ -6,7 +6,7 @@ ENV TERM ansi
 ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 ADD ./config/repositories /etc/apk/
-ADD ./config/supevisord.conf /etc/
+ADD ./config/supervisord.conf /etc/
 
 RUN apk add --update-cache supervisor git bash openssl openssl-dev ca-certificates
 
